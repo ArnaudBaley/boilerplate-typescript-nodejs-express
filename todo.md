@@ -1,0 +1,5 @@
+- [ ] Logger
+- [ ] Couches (controllers, business, DAO)
+- [ ] TU
+- [ ] ID
+- [ ] ORM SQLn
