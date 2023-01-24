@@ -1,5 +1,7 @@
-- [ ] Logger
+- [x] Logger
+
 - [ ] Couches (controllers, business, DAO)
 - [ ] TU
-- [ ] ID
-- [ ] ORM SQLn
+- [ ] Husky -> TU
+- [ ] DI
+- [ ] ORM SQL
