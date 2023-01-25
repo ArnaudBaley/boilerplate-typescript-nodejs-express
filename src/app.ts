@@ -1,19 +1,22 @@
-import express, { Express, Request, Response } from 'express';
-import dotenv from 'dotenv';
-import httpLogger from './lib/logger/http-logger';
-import logger from './lib/logger/logger';
+import 'reflect-metadata';
+import express, { Express, Request, Response } from "express";
+import bodyParser from "body-parser";
+import { createExpressServer } from "routing-controllers";
+import httpLogger from "./lib/logger/http-logger";
+import logger from "./lib/logger/logger";
+import config from "./config/server";
+import { UserController } from "./controllers/UserController";
+import HomeController from './controllers/HomeController';
 
-dotenv.config();
-
-const app: Express = express();
-const port = process.env.PORT;
+const app: Express = createExpressServer({ controllers: [HomeController, UserController] });
+const port = config.PORT;
 
 app.use(httpLogger);
-logger.info('Logger is working');
+logger.info("Logger is working");
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Express + TypeScript Server');
-});
+// app.use(bodyParser.json());
+
+app.set("port", port ? port : 3000);
 
 app.listen(port, () => {
   console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
