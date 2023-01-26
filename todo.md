@@ -1,7 +1,9 @@
 - [x] Logger
+- [x] Couches (controllers, business, DAO)
+- [x] ORM SQL
 
-- [ ] Couches (controllers, business, DAO)
+- [ ] DI
 - [ ] TU
 - [ ] Husky -> TU
-- [ ] DI
-- [ ] ORM SQL
+
+- [ ] OpenAPI
