@@ -1,3 +1,4 @@
+import { Exclude } from "class-transformer";
 import { IsNotEmpty } from "class-validator";
 import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
@@ -14,9 +15,9 @@ export class User {
     @Column()
     @IsNotEmpty()    
     public lastName: string;
-
-    @Column()
-    @IsNotEmpty()    
+    
+    @Column()    
+    @IsNotEmpty()        
     public password: string;
     
     public toString(): string {

@@ -3,7 +3,10 @@
 - [x] ORM SQL
 
 - [ ] DI
+
 - [ ] TU
 - [ ] Husky -> TU
 
 - [ ] OpenAPI
+
+- [ ] DTO

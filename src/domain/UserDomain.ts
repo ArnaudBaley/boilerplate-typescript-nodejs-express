@@ -5,6 +5,6 @@ export class UserDomain {
     private userDao = new UserDao();
 
     public save(user: User) {
-        this.userDao.save(user);
+        return this.userDao.save(user);
     }
 }
