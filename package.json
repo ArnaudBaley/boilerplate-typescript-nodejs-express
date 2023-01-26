@@ -39,6 +39,8 @@
     "pug": "^3.0.2",
     "reflect-metadata": "^0.1.13",
     "routing-controllers": "^0.10.1",
+    "sqlite3": "^5.1.4",
+    "typeorm": "^0.3.11",
     "winston": "^3.8.2"
   }
 }

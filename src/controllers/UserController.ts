@@ -1,10 +1,15 @@
 import { Controller, Param, Body, Get, Post, Put, Delete, JsonController } from 'routing-controllers';
-import { User } from '../models/User';
+import { UserDomain } from '../domain/UserDomain';
+import { User } from '../entities/UserEntity';
 
 @JsonController()
 export class UserController {
+  
+  private userDomain = new UserDomain();
+  
   @Post('/user')
-  public postUser(@Body() user: User) {
+  public async postUser(@Body() user: User) {
+    await this.userDomain.save(user);
     return user;
   }
 }
