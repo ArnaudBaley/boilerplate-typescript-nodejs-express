@@ -1,13 +1,14 @@
 import { Controller, Param, Body, Get, Post, Put, Delete, JsonController } from 'routing-controllers';
+import Container, { Service } from 'typedi';
 import { UserDomain } from '../domain/UserDomain';
-import { UserDTO } from '../dtos/user/UserDto';
 import { User } from '../entities/UserEntity';
 
 @JsonController()
+@Service()
 export class UserController {
-  
-  private userDomain = new UserDomain();
-  
+    
+  constructor(private userDomain: UserDomain){}
+
   @Post('/user')
   public postUser(@Body() user: User) {
     return this.userDomain.save(user);
